@@ -1,0 +1,57 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+   
+    <title>hand cricket</title>
+   
+</head>
+<body>
+    <script>
+        function computerPlay(max) 
+        {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+        function playRound(playerSelection1,playerSelection2)
+        {
+            if(playerSelection1==playerSelection2)
+            {
+                return "you out"
+                
+            }
+           
+            else{
+                return playerSelection1;
+            }
+        }
+        function game()
+        {
+            let winnercount=null;
+            for(let i=0;i<59;++i)
+            {
+                const playerSelection1 = prompt("start your batting");
+                const playerSelection2 = computerPlay(7);
+                let play=playRound(playerSelection1, playerSelection2);
+            
+                if(play=="you out")
+                {
+                     window.alert("0hh you out!.... play again");
+                     winnercount+=playerSelection1;
+                     window.alert("your total runs  "+winnercount);
+                }
+                else
+                {
+                    window.alert(play);
+                    winnercount+=playerSelection1;
+                    window.alert("your runs  "+winnercount);
+                }    
+            }
+        }
+    
+    </script>
+    <center>
+    <p><b>THE HAND CRICKET GAME</b></p>
+    <button onclick=game()> play game</button>
+    </center>
+</body>
+</html>
